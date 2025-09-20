@@ -1,6 +1,11 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "doorfornoobz:block/mob_barrier_block"
+    "down": "doorfornoobz:block/chess_creepers",
+    "east": "doorfornoobz:block/corrupted_creeper",
+    "north": "doorfornoobz:block/creeper_that_bro_calls_steve",
+    "south": "doorfornoobz:block/creeperborg",
+    "up": "doorfornoobz:block/no_creepers",
+    "west": "doorfornoobz:block/skibdi_corrupted_creeper"
   }
 }
