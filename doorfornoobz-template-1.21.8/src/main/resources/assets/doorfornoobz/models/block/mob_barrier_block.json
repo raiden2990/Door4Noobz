@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "doorfornoobz:block/mob_barrier_block"
+  }
+}
