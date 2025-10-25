@@ -17,6 +17,4 @@ public class ModBlocks {
             NotReallyABlock::new,
             BlockBehaviour.Properties.of().sound(SoundType.SLIME_BLOCK).pushReaction(PushReaction.NORMAL)
     );
-
-
 }

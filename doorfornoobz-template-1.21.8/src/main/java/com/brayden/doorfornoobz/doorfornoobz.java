@@ -42,6 +42,7 @@ public class doorfornoobz {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         ModBlocks.BLOCKS.register(modEventBus);
+        Moditems.ITEMS.register(modEventBus);
 
 
         // Register ourselves for server and other game events we are interested in.
