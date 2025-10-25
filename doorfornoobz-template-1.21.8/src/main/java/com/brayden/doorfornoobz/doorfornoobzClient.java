@@ -17,10 +17,6 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
 @EventBusSubscriber(modid = doorfornoobz.MODID, value = Dist.CLIENT)
 public class doorfornoobzClient {
-    @SubscribeEvent
-    public static void gatherData(GatherDataEvent.Client event) {
-        //event.createProvider(MODITEMMODELPROVIDER::new);
-    }
     public doorfornoobzClient(ModContainer container) {
         // Allows NeoForge to create a config screen for this mod's configs.
         // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
