@@ -1,5 +1,8 @@
 package com.brayden.doorfornoobz;
 
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -43,6 +46,8 @@ public class doorfornoobz {
         modEventBus.addListener(this::commonSetup);
         ModBlocks.BLOCKS.register(modEventBus);
         Moditems.ITEMS.register(modEventBus);
+        ModEntityTypes.ENTITIES.register(modEventBus);
+        modEventBus.addListener(EntityAttributeCreationEvent.class, doorfornoobz::createDefaultAttributes);
 
 
         // Register ourselves for server and other game events we are interested in.
@@ -77,5 +82,22 @@ public class doorfornoobz {
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
+    }
+
+    public static void createDefaultAttributes(EntityAttributeCreationEvent event) {
+        event.put(
+                ModEntityTypes.GUARDIAN_BOB.get(),
+                LivingEntity.createLivingAttributes()
+                        .add(Attributes.ATTACK_DAMAGE, 7)
+                        .add(Attributes.ATTACK_KNOCKBACK, 67)
+                        .add(Attributes.ATTACK_SPEED, 9)
+                        .add(Attributes.MAX_HEALTH, 267)
+                        .add(Attributes.BURNING_TIME, 3)
+                        .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 6)
+                        .add(Attributes.JUMP_STRENGTH,20 )
+                        .add(Attributes.MOVEMENT_SPEED, 30)
+                        .add(Attributes.FOLLOW_RANGE, 50)
+                        .build()
+        );
     }
 }

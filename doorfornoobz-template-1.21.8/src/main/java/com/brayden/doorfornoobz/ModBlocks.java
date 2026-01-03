@@ -15,6 +15,6 @@ public class ModBlocks {
     public static final DeferredHolder<Block, NotReallyABlock> NOT_REALLY_A_BLOCK = BLOCKS.registerBlock(
             "mob_barrier_block",
             NotReallyABlock::new,
-            BlockBehaviour.Properties.of().sound(SoundType.SLIME_BLOCK).pushReaction(PushReaction.NORMAL)
+            BlockBehaviour.Properties.of().sound(SoundType.SLIME_BLOCK).pushReaction(PushReaction.NORMAL).dynamicShape()
     );
 }
