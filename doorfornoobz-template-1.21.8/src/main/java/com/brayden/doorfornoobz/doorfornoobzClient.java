@@ -1,7 +1,9 @@
 package com.brayden.doorfornoobz;
 
 import com.brayden.doorfornoobz.data.MODITEMMODELPROVIDER;
+import com.brayden.doorfornoobz.mobs.render.GuardianRenderer;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -30,5 +32,7 @@ public class doorfornoobzClient {
         // Some client setup code
         doorfornoobz.LOGGER.info("HELLO FROM CLIENT SETUP");
         doorfornoobz.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+
+        EntityRenderers.register(ModEntityTypes.GUARDIAN_BOB.get(), GuardianRenderer::new);
     }
 }
