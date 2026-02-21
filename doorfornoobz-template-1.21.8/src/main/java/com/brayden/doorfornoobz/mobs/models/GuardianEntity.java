@@ -6,6 +6,8 @@ import net.minecraft.world.entity.NeutralMob;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.MoveTowardsTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.level.Level;
@@ -20,6 +22,8 @@ public class GuardianEntity extends PathfinderMob implements NeutralMob {
 
     @Override
     protected void registerGoals() {
+        goalSelector.addGoal(1,new MeleeAttackGoal(this, 1.0D, true));
+        goalSelector.addGoal(2,new MoveTowardsTargetGoal(this, 1.2f, 42));
         targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class,5, true, false, ((livingEntity, serverLevel) -> livingEntity instanceof Enemy) ));
     }
 

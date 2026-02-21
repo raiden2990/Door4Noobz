@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "doorfornoobz:item/totally_not_an_egg_thatwill_protect_u"
+  }
+}
