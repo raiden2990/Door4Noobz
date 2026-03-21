@@ -94,8 +94,8 @@ public class doorfornoobz {
                         .add(Attributes.MAX_HEALTH, 267)
                         .add(Attributes.BURNING_TIME, 3)
                         .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 6)
-                        .add(Attributes.JUMP_STRENGTH,20 )
-                        .add(Attributes.MOVEMENT_SPEED, 30)
+                        .add(Attributes.JUMP_STRENGTH,2.5f )
+                        .add(Attributes.MOVEMENT_SPEED, 1)
                         .add(Attributes.FOLLOW_RANGE, 50)
                         .build()
         );
