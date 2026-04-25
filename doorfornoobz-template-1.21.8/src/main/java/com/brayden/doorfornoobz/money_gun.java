@@ -3,6 +3,7 @@ package com.brayden.doorfornoobz;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -53,7 +54,11 @@ class money_gun extends Item {
         int choice = level.random.nextInt(sum.get());
         for(Map.Entry<Item,Integer>entry:RNG.entrySet()){
             if (choice < entry.getValue()){
-                level.addFreshEntity(entry.getKey().createEntity(level,livingEntity,entry.getKey().getDefaultInstance()));
+                ItemStack item = new ItemStack(entry.getKey(), 1);
+                ItemEntity e = new ItemEntity(level, livingEntity.getX(),livingEntity.getEyeY(),livingEntity.getZ(), item);
+                e.fallDistance = 0;
+                e.setDeltaMovement(livingEntity.getLookAngle().scale(7D).add(0,0.2D,0));
+                level.addFreshEntity(e);
                 break;
             }
             else{
