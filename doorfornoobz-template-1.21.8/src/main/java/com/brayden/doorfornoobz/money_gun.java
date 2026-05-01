@@ -57,7 +57,8 @@ class money_gun extends Item {
                 ItemStack item = new ItemStack(entry.getKey(), 1);
                 ItemEntity e = new ItemEntity(level, livingEntity.getX(),livingEntity.getEyeY(),livingEntity.getZ(), item);
                 e.fallDistance = 0;
-                e.setDeltaMovement(livingEntity.getLookAngle().scale(7D).add(0,0.2D,0));
+                e.setDeltaMovement(livingEntity.getLookAngle().scale(1D).add(0,0.2D,0));
+                e.setPickUpDelay(10);
                 level.addFreshEntity(e);
                 break;
             }

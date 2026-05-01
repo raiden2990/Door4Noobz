@@ -1,5 +1,6 @@
 package com.brayden.doorfornoobz;
 
+import com.brayden.doorfornoobz.blocks.Lucky_Block;
 import com.brayden.doorfornoobz.blocks.NotReallyABlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -17,4 +18,5 @@ public class ModBlocks {
             NotReallyABlock::new,
             BlockBehaviour.Properties.of().sound(SoundType.SLIME_BLOCK).pushReaction(PushReaction.NORMAL).dynamicShape()
     );
+public static final DeferredHolder<Block, Lucky_Block> Lucky_Block =BLOCKS.registerBlock("lucky_block",Lucky_Block::new);
 }
