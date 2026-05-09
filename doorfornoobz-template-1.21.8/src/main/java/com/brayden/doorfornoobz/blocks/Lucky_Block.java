@@ -6,6 +6,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -17,13 +18,14 @@ public class Lucky_Block extends Block  {
     }
 
     @Override
-    public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
-        super.playerDestroy(level, player, pos, state, blockEntity, tool);
-        int choice = level.random.nextInt(2);
+    public void destroy(LevelAccessor level, BlockPos pos, BlockState state) {
+        int choice = level.getRandom().nextInt(2);
         if (choice==0){
             ItemStack item = new ItemStack(Moditems.bad_income.get(),1);
-            ItemEntity e = new ItemEntity(level, player.getX(),player.getEyeY(),player.getZ(), item);
+            ItemEntity e = new ItemEntity(level.getServer().overworld(), pos.getX(),pos.getY(),pos.getZ(), item);
             level.addFreshEntity(e);
         }
+
+        super.destroy(level, pos, state);
     }
 }
