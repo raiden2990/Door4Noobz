@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "doorfornoobz:block/luvky_top",
+    "east": "doorfornoobz:block/luvky",
+    "north": "doorfornoobz:block/luvky",
+    "south": "doorfornoobz:block/luvky",
+    "up": "doorfornoobz:block/luvky_top",
+    "west": "doorfornoobz:block/luvky"
+  }
+}
