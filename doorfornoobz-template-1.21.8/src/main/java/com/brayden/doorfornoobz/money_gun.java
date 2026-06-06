@@ -1,5 +1,7 @@
 package com.brayden.doorfornoobz;
 
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleType;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -60,6 +62,11 @@ class money_gun extends Item {
                 e.setDeltaMovement(livingEntity.getLookAngle().scale(1D).add(0,0.2D,0));
                 e.setPickUpDelay(10);
                 level.addFreshEntity(e);
+
+                float speedX = level.random.nextInt(10);
+                float speedY = level.random.nextInt(10);
+                float speedZ = level.random.nextInt(10);
+                level.addParticle(mode_particles.MONEY::get, livingEntity.getX(), livingEntity.getEyeY(), livingEntity.getZ(), speedX / 10, speedY / 10, speedZ / 10);
                 break;
             }
             else{

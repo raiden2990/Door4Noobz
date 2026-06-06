@@ -47,6 +47,7 @@ public class doorfornoobz {
         ModBlocks.BLOCKS.register(modEventBus);
         Moditems.ITEMS.register(modEventBus);
         ModEntityTypes.ENTITIES.register(modEventBus);
+        mode_particles.PARTICLES.register(modEventBus);
         modEventBus.addListener(EntityAttributeCreationEvent.class, doorfornoobz::createDefaultAttributes);
 
 
