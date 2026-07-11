@@ -18,5 +18,5 @@ public class ModBlocks {
             NotReallyABlock::new,
             BlockBehaviour.Properties.of().sound(SoundType.SLIME_BLOCK).pushReaction(PushReaction.NORMAL).dynamicShape()
     );
-public static final DeferredHolder<Block, Lucky_Block> Lucky_Block =BLOCKS.registerBlock("lucky_block",Lucky_Block::new);
+public static final DeferredHolder<Block, Lucky_Block> Lucky_Block = BLOCKS.registerBlock("lucky_block",Lucky_Block::new);
 }

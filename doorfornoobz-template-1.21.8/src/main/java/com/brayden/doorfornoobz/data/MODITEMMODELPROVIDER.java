@@ -34,7 +34,7 @@ public class MODITEMMODELPROVIDER extends ModelProvider {
         blockModels.createCraftingTableLike(ModBlocks.NOT_REALLY_A_BLOCK.get(), Blocks.BIRCH_WOOD, new BiFunction<Block, Block, TextureMapping>(){
             @Override
             public TextureMapping apply(Block block, Block block2) {
-                return null;
+                return TextureMapping.craftingTable(block, block2);
             }
         });
         blockModels.createFlatItemModelWithBlockTexture(Moditems.MOB_BARRIER_BLOCK.get(), ModBlocks.NOT_REALLY_A_BLOCK.get());

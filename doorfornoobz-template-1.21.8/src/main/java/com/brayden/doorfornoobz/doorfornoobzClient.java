@@ -2,6 +2,7 @@ package com.brayden.doorfornoobz;
 
 import com.brayden.doorfornoobz.data.MODITEMMODELPROVIDER;
 import com.brayden.doorfornoobz.mobs.render.GuardianRenderer;
+import com.brayden.doorfornoobz.particle.MoneyParticleProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
@@ -10,6 +11,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -34,5 +36,10 @@ public class doorfornoobzClient {
         doorfornoobz.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
 
         EntityRenderers.register(ModEntityTypes.GUARDIAN_BOB.get(), GuardianRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(mode_particles.MONEY.get(), MoneyParticleProvider::new);
     }
 }
