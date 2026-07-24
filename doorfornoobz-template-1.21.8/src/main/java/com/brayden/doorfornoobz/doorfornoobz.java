@@ -100,5 +100,19 @@ public class doorfornoobz {
                         .add(Attributes.FOLLOW_RANGE, 50)
                         .build()
         );
+            event.put(
+                    ModEntityTypes.TURRET_BOB.get(),
+                    LivingEntity.createLivingAttributes()
+                            .add(Attributes.ATTACK_DAMAGE, 3)
+                            .add(Attributes.ATTACK_SPEED,25)
+                            .add(Attributes.ATTACK_KNOCKBACK,5)
+                            .add(Attributes.MAX_HEALTH,17)
+                            .add(Attributes.BURNING_TIME,0.1)
+                            .add(Attributes.ENTITY_INTERACTION_RANGE,20)
+                            .add(Attributes.KNOCKBACK_RESISTANCE,999)
+                            .build()
+        );
+
+
     }
 }
