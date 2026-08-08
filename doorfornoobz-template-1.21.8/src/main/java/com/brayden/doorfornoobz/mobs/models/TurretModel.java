@@ -3,6 +3,7 @@ package com.brayden.doorfornoobz.mobs.models;// Made with Blockbench 5.1.4
 // Paste this class into your mod and generate all required imports
 
 
+import com.brayden.doorfornoobz.doorfornoobz;
 import com.brayden.doorfornoobz.mobs.render.TurretRenderState;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -17,7 +18,7 @@ import net.minecraft.world.entity.Entity;
 
 public class TurretModel extends EntityModel<TurretRenderState> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("modid", "turretmodel"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(doorfornoobz.MODID, "turretmodel"), "main");
 	private final ModelPart everything;
 	private final ModelPart thing2;
 	private final ModelPart thing1;
@@ -32,7 +33,7 @@ public class TurretModel extends EntityModel<TurretRenderState> {
 
 	public TurretModel (ModelPart root) {
 		super(root);
-		this.everything = root.getChild("everything");
+		this.everything = root.getChild("main");
 		this.thing2 = this.everything.getChild("thing2");
 		this.thing1 = this.thing2.getChild("thing 1");
 		this.cube3 = this.thing1.getChild("cube3");
@@ -48,7 +49,7 @@ public class TurretModel extends EntityModel<TurretRenderState> {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition everything = partdefinition.addOrReplaceChild("everything", CubeListBuilder.create(), PartPose.offset(0.0F, 22.0F, 0.0F));
+		PartDefinition everything = partdefinition.addOrReplaceChild("main", CubeListBuilder.create(), PartPose.offset(0.0F, 22.0F, 0.0F));
 
 		PartDefinition thing2 = everything.addOrReplaceChild("thing2", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 

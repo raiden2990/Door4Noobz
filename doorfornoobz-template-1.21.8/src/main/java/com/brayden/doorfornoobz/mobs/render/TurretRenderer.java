@@ -1,5 +1,6 @@
 package com.brayden.doorfornoobz.mobs.render;
 
+import com.brayden.doorfornoobz.doorfornoobz;
 import com.brayden.doorfornoobz.mobs.models.MinecraftGuardian;
 import com.brayden.doorfornoobz.mobs.models.TurretEntity;
 import com.brayden.doorfornoobz.mobs.models.TurretModel;
@@ -14,8 +15,8 @@ public class TurretRenderer extends MobRenderer <TurretEntity, TurretRenderState
     }
 
     @Override
-    public ResourceLocation getTextureLocation(TurretRenderState TurretRenderState) {
-        return ResourceLocation.fromNamespaceAndPath("modid", "tentures/entity/turret/turret.png");
+    public ResourceLocation getTextureLocation(TurretRenderState turretRenderState) {
+        return ResourceLocation.fromNamespaceAndPath(doorfornoobz.MODID, "textures/entity/turret/turret.png");
     }
 
     @Override

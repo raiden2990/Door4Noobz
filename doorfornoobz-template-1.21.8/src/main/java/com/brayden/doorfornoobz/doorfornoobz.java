@@ -110,6 +110,7 @@ public class doorfornoobz {
                             .add(Attributes.BURNING_TIME,0.1)
                             .add(Attributes.ENTITY_INTERACTION_RANGE,20)
                             .add(Attributes.KNOCKBACK_RESISTANCE,999)
+                            .add(Attributes.FOLLOW_RANGE,0)
                             .build()
         );
 
