@@ -20,8 +20,9 @@ public class TurretEntity extends Mob implements RangedAttackMob{
     }
 
     @Override
-    public void performRangedAttack(LivingEntity livingEntity, float v) {
-
+    public void performRangedAttack(LivingEntity target, float v) {
+lookAt(target,180,180);
+Turret_Pew proj = new Turret_Pew()
     }
 }
 //hp:15
