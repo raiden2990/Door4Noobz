@@ -2,6 +2,7 @@ package com.brayden.doorfornoobz;
 
 import com.brayden.doorfornoobz.mobs.models.GuardianEntity;
 import com.brayden.doorfornoobz.mobs.models.TurretEntity;
+import com.brayden.doorfornoobz.mobs.models.Turret_Pew;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +22,10 @@ public class ModEntityTypes {
     public static ResourceKey<EntityType<?>> Turret_KEY = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.withDefaultNamespace("turretmodel"));
     public static final Supplier<EntityType<TurretEntity>> TURRET_BOB =
             ENTITIES.register("turretmodel", ()-> EntityType.Builder.of(TurretEntity::new, MobCategory.CREATURE).build(Turret_KEY));
+
+    public static ResourceKey<EntityType<?>> Turret_Pew_KEY = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.withDefaultNamespace("turret_pew"));
+    public static final Supplier<EntityType<Turret_Pew>> TURRET_PEW =
+            ENTITIES.register("turret_pew", ()-> EntityType.Builder.<Turret_Pew>of(Turret_Pew::new, MobCategory.CREATURE).build(Turret_Pew_KEY));
 
 
 
