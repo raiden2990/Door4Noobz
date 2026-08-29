@@ -5,6 +5,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.level.Level;
 
@@ -17,6 +18,7 @@ public class TurretEntity extends Mob implements RangedAttackMob{
     @Override
     protected void registerGoals() {
         goalSelector.addGoal(1,new RangedAttackGoal(this,1,10 ,20));
+        targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class,5, true, false, ((livingEntity, serverLevel) -> livingEntity instanceof Enemy) ));
     }
 
     @Override
@@ -24,6 +26,11 @@ public class TurretEntity extends Mob implements RangedAttackMob{
 lookAt(target,180,180);
 Turret_Pew proj = new Turret_Pew(target.level());
 target.level().addFreshEntity(proj);
+    }
+
+    @Override
+    public boolean isPushable() {
+        return false;
     }
 }
 //hp:15

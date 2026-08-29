@@ -1,8 +1,10 @@
 package com.brayden.doorfornoobz;
 
 import com.brayden.doorfornoobz.data.MODITEMMODELPROVIDER;
+import com.brayden.doorfornoobz.mobs.models.Turret_Pew;
 import com.brayden.doorfornoobz.mobs.render.GuardianRenderer;
 import com.brayden.doorfornoobz.mobs.render.TurretRenderer;
+import com.brayden.doorfornoobz.mobs.render.Turret_PewRender;
 import com.brayden.doorfornoobz.particle.MoneyParticleProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -38,6 +40,7 @@ public class doorfornoobzClient {
 
         EntityRenderers.register(ModEntityTypes.GUARDIAN_BOB.get(), GuardianRenderer::new);
         EntityRenderers.register(ModEntityTypes.TURRET_BOB.get(), TurretRenderer::new);
+        EntityRenderers.register(ModEntityTypes.TURRET_PEW.get(), Turret_PewRender::new);
     }
 
     @SubscribeEvent

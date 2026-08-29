@@ -110,9 +110,13 @@ public class doorfornoobz {
                             .add(Attributes.BURNING_TIME,0.1)
                             .add(Attributes.ENTITY_INTERACTION_RANGE,20)
                             .add(Attributes.KNOCKBACK_RESISTANCE,999)
-                            .add(Attributes.FOLLOW_RANGE,0)
+                            .add(Attributes.MOVEMENT_SPEED,0)
+                            .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE,0)
+                            .add(Attributes.WATER_MOVEMENT_EFFICIENCY,0)
+                            .add(Attributes.FOLLOW_RANGE,50)
                             .build()
         );
+            /*
             event.put(
                     ModEntityTypes.TURRET_PEW.get(),
                     LivingEntity.createLivingAttributes()
@@ -124,6 +128,8 @@ public class doorfornoobz {
 
 
             );
+
+             */
 
 
     }
