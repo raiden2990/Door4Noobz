@@ -1,5 +1,7 @@
 package com.brayden.doorfornoobz.mobs.models;
 
+import net.minecraft.commands.arguments.EntityAnchorArgument;
+import net.minecraft.server.commands.LookAt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -8,6 +10,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 
 public class TurretEntity extends Mob implements RangedAttackMob{
 
@@ -23,9 +26,14 @@ public class TurretEntity extends Mob implements RangedAttackMob{
 
     @Override
     public void performRangedAttack(LivingEntity target, float v) {
-lookAt(target,180,180);
-Turret_Pew proj = new Turret_Pew(target.level());
-target.level().addFreshEntity(proj);
+        lookAt(EntityAnchorArgument.Anchor.EYES, target.getEyePosition().reverse());
+
+        if (!level().isClientSide) {
+            Turret_Pew proj = new Turret_Pew(target.level());
+            proj.shootFromRotation(this, getXRot(), getYRot(),0, 75, 0);
+            level().addFreshEntity(proj);
+        }
+
     }
 
     @Override
