@@ -26,11 +26,12 @@ public class TurretEntity extends Mob implements RangedAttackMob{
 
     @Override
     public void performRangedAttack(LivingEntity target, float v) {
-        lookAt(EntityAnchorArgument.Anchor.EYES, target.getEyePosition().reverse());
+        lookAt(EntityAnchorArgument.Anchor.EYES, target.getEyePosition().subtract(getEyePosition()));
 
         if (!level().isClientSide) {
-            Turret_Pew proj = new Turret_Pew(target.level());
-            proj.shootFromRotation(this, getXRot(), getYRot(),0, 75, 0);
+            Turret_Pew proj = new Turret_Pew(level());
+            proj.setPos(getEyePosition());
+            proj.shootFromRotation(this, getXRot(), getYRot(),0, 25, 0);
             level().addFreshEntity(proj);
         }
 

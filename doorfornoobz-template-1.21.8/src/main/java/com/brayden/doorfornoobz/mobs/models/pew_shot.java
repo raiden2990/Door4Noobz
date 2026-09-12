@@ -17,7 +17,7 @@ import net.minecraft.world.entity.Entity;
 
 public class pew_shot extends EntityModel<Pew_ShotRenderState> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(doorfornoobz.MODID, "pewmodel"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(doorfornoobz.MODID, "turret_pew"), "main");
 	private final ModelPart bb_main;
 
 	public pew_shot(ModelPart root) {
