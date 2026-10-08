@@ -9,6 +9,9 @@ import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
@@ -29,9 +32,13 @@ public class TurretEntity extends Mob implements RangedAttackMob{
         lookAt(EntityAnchorArgument.Anchor.EYES, target.getEyePosition().subtract(getEyePosition()));
 
         if (!level().isClientSide) {
-            Turret_Pew proj = new Turret_Pew(level());
+            ItemStack arrowstack = new ItemStack(Items.ARROW);
+            double Xvel = target.getX()-this.getX();
+            double Yvel = target.getEyeY()-this.getEyeY();
+            double Zvel = target.getZ()-this.getZ();
+           Arrow proj = new Arrow(level(),getX(), getY(), getZ(), arrowstack, null);
             proj.setPos(getEyePosition());
-            proj.shootFromRotation(this, getXRot(), getYRot(),0, 25, 0);
+            proj.shoot(Xvel,Yvel, Zvel, 1.5f,0);
             level().addFreshEntity(proj);
         }
 
