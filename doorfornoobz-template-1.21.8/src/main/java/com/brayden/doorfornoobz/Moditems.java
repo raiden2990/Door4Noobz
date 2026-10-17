@@ -17,6 +17,9 @@ public class Moditems {
     public static final DeferredItem <Potatio_MINIGun> An_Item_That_Goes_Pew_Pew_Pew = ITEMS.registerItem("an_item_that_goes_pew_pew_pew", Potatio_MINIGun::new);
 
     public static final DeferredItem <money_gun> bad_income = ITEMS.registerItem("bad_income", money_gun::new);
+
+    public static  final DeferredItem<SpawnEggItem> WARNING_DONT_SPWAN = ITEMS.registerItem("WARNING_DONT_SPWANu",
+            properties -> new SpawnEggItem(ModEntityTypes.TURRET_BOB.get(), properties));
 }
 
 

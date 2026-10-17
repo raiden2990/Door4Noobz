@@ -39,6 +39,10 @@ public class TurretEntity extends Mob implements RangedAttackMob{
            Arrow proj = new Arrow(level(),getX(), getY(), getZ(), arrowstack, null);
             proj.setPos(getEyePosition());
             proj.shoot(Xvel,Yvel, Zvel, 2.5f,0);
+            Turret_Pew p = new Turret_Pew(level());
+            p.setPos(getEyePosition());
+            p.shoot(Xvel,Yvel, Zvel, 2.5f,0);
+            level().addFreshEntity(p);
             level().addFreshEntity(proj);
         }
 
